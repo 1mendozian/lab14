@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+unsigned long long fact(const unsigned n) {
+    return n < 2 ? 1 : n * fact(n - 1);
+}
+
+long double fact(int N)
+{
+    if (N < 0) 
+        return 0; 
+    if (N == 0) 
+        return 1; 
+    else 
+        return N * fact(N - 1); 
+}
+
+int main()
+{
+    cout << "\tx\tfact(x)\n";
+    for (unsigned n = 0; n < 15; n++) {
+        cout << '\t' << n << '\t' << fact(n) << '\n';
+    }
+    int N;
+    setlocale(0, ""); 
+    cout << endl;
+    cout << "Введiть число для обчислення факторiала: ";
+    cin >> N;
+    cout << "Факторiал для числа " << N << " = " << fact(N) << endl << endl; 
+    return 0;
+}
